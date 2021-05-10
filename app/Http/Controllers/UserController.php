@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class User extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class User extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('index', compact('users'));
     }
 
     /**
@@ -24,7 +25,7 @@ class User extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
